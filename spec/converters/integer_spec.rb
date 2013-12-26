@@ -5,7 +5,7 @@ describe ParseableHash::Converters::Integer do
     context 'when value can be parsed' do
       subject { described_class.new('5') }
 
-      it 'should return integer value' do
+      it 'should return integer object' do
         expect(subject.call).to eq(5)
       end
     end

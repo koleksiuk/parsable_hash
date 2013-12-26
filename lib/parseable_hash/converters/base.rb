@@ -7,7 +7,7 @@ module ParseableHash
 
       def call(&block)
         try_convert
-      rescue
+      rescue => e
         if block_given?
           block.call(@value)
         else
