@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe ParseableHash::Converters::Integer do
+describe ParseableHash::Converters::Float do
   describe '#call' do
     context 'when value can be parsed' do
-      subject { described_class.new('5') }
+      subject { described_class.new('5.3') }
 
       it 'should return integer value' do
-        expect(subject.call).to eq(5)
+        expect(subject.call).to eq(5.3)
       end
     end
 
