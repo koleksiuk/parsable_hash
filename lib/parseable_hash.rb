@@ -3,6 +3,9 @@ require 'parseable_hash/version'
 require 'parseable_hash/converters'
 require 'parseable_hash/parser'
 
+require 'parseable_hash/converters/base'
+Gem.find_files("parseable_hash/converters/*.rb").delete_if {|f| f =~ /base/ }.each {|f| require f }
+
 module ParseableHash
   def self.included(klass)
     klass.send(:include, InstanceMethods)
