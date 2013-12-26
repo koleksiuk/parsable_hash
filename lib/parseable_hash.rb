@@ -2,9 +2,8 @@ require 'pry'
 require 'parseable_hash/version'
 require 'parseable_hash/parser'
 require 'parseable_hash/strategies'
-
 require 'parseable_hash/converters/base'
-Gem.find_files("parseable_hash/converters/*.rb").delete_if {|f| f =~ /base/ }.each {|f| require f }
+require 'parseable_hash/strategy/converter_loader'
 
 module ParseableHash
   def self.included(klass)

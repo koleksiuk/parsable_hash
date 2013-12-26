@@ -23,3 +23,5 @@ module ParseableHash
     end
   end
 end
+
+Gem.find_files("parseable_hash/converters/*.rb").delete_if {|f| f =~ /base/ }.each {|f| require f }

@@ -39,7 +39,7 @@ describe ParseableHash::Strategies do
       expect(strategies.get(:new)).to eq(foo_strategy)
     end
 
-    it 'should allow to set strategy with array accessor' do
+    it 'should allow to set strategy with #add method' do
       strategies.add(:new, foo_strategy)
       expect(strategies.get(:new)).to eq(foo_strategy)
     end
