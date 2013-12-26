@@ -1,3 +1,5 @@
+require 'date' if RUBY_VERSION < '1.9'
+
 module ParseableHash
   module Converters
     class Date < Base
