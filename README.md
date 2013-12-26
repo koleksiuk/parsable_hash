@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/koleksiuk/parseable_hash.png)](https://codeclimate.com/github/koleksiuk/parseable_hash)
+
+
 # ParseableHash
 
 TODO: Write a gem description
