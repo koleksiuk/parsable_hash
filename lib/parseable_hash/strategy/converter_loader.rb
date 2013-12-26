@@ -1,6 +1,14 @@
 module ParseableHash
   module Strategy
     class ConverterLoader
+      def self.from_value(value)
+        if value.is_a? Class
+          from_class(value)
+        else
+          from_name(value)
+        end
+      end
+
       def self.from_name(name)
         new(name)
       end
@@ -12,7 +20,7 @@ module ParseableHash
       attr_accessor :klass
 
       def initialize(name, options = {})
-        @name      = name
+        @name      = name.to_s
         self.klass = options.fetch(:converter) { load_from_name }
       end
 
@@ -24,10 +32,12 @@ module ParseableHash
 
       def load_from_name
         ParseableHash::Converters.const_get(camelize(@name))
+      rescue
+        ParseableHash::Converters::Null
       end
 
       def camelize(name)
-        name.to_s.split('_').map(&:capitalize).join
+        name.split('_').map(&:capitalize).join
       end
     end
   end

@@ -4,6 +4,7 @@ require 'parseable_hash/parser'
 require 'parseable_hash/strategies'
 require 'parseable_hash/converters/base'
 require 'parseable_hash/strategy/converter_loader'
+require 'parseable_hash/hash_strategy'
 
 module ParseableHash
   def self.included(klass)

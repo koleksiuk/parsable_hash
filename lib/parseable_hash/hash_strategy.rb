@@ -4,15 +4,19 @@ module ParseableHash
       @strategy = prepare(strategy)
     end
 
+    attr_reader :strategy
+
     private
 
     def prepare(hash)
-      hash.map do |k, v|
-        if v.is_a? Hash
-          k = prepare(v)
+      hash.inject({}) do |hash, (k, v)|
+        if v.is_a?(Hash)
+          hash[k] = prepare(v)
         else
-          k =  Strategy::TypeLoader.new(v)
+          hash[k] = Strategy::ConverterLoader.from_value(v)
         end
+
+        hash
       end
     end
   end
