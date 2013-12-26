@@ -1,4 +1,4 @@
-require 'date' if RUBY_VERSION < '1.9'
+require 'date' if RUBY_VERSION < '1.9.3'
 
 module ParseableHash
   module Converters
