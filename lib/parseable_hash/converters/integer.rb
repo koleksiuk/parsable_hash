@@ -1,5 +1,3 @@
-require_relative 'base'
-
 module ParseableHash
   module Converters
     class Integer < Base
