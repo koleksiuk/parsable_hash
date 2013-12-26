@@ -1,6 +1,5 @@
 require 'pry'
 require 'parseable_hash/version'
-require 'parseable_hash/converters'
 require 'parseable_hash/parser'
 
 require 'parseable_hash/converters/base'
