@@ -1,4 +1,4 @@
-module ParseableHash
+module ParsableHash
   module ConverterLoader
     class Null
       private

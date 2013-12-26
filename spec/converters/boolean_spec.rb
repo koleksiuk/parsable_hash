@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParseableHash::Converters::Boolean do
+describe ParsableHash::Converters::Boolean do
   describe '#call' do
     describe 'when value == "true"' do
       subject { described_class.new('true') }

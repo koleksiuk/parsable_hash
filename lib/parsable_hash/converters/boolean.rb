@@ -1,10 +1,10 @@
-module ParseableHash
+module ParsableHash
   module Converters
-    class Float < Base
+    class Boolean < Base
       private
 
       def try_convert
-        @value.to_f
+        @value.to_s == "true"
       end
     end
   end

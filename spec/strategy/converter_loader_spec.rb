@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe ParseableHash::Strategy::ConverterLoader do
+describe ParsableHash::Strategy::ConverterLoader do
   let(:klass) { double('my_converter') }
 
   before do
-    ParseableHash::Converters.stub(:const_get).with('MyConverter') { klass }
+    ParsableHash::Converters.stub(:const_get).with('MyConverter') { klass }
   end
 
   describe 'coverter loading' do

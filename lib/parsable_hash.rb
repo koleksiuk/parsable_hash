@@ -1,12 +1,12 @@
 require 'pry'
-require 'parseable_hash/version'
-require 'parseable_hash/parser'
-require 'parseable_hash/strategies'
-require 'parseable_hash/converters/base'
-require 'parseable_hash/strategy/converter_loader'
-require 'parseable_hash/hash_strategy'
+require 'parsable_hash/version'
+require 'parsable_hash/parser'
+require 'parsable_hash/strategies'
+require 'parsable_hash/converters/base'
+require 'parsable_hash/strategy/converter_loader'
+require 'parsable_hash/hash_strategy'
 
-module ParseableHash
+module ParsableHash
   def self.included(klass)
     klass.send(:include, InstanceMethods)
     klass.extend(ClassMethods)

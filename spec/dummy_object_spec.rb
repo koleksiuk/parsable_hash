@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 class Dummy
-  include ParseableHash
+  include ParsableHash
 
   parse_strategy :random_values, :int => :integer, :fl => :float, :nested => { :dt => :date }
   parse_strategy :int, :int => :integer

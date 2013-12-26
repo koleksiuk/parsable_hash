@@ -1,4 +1,4 @@
-module ParseableHash
+module ParsableHash
   module Strategy
     class ConverterLoader
       def self.from_value(value)
@@ -31,9 +31,9 @@ module ParseableHash
       private
 
       def load_from_name
-        ParseableHash::Converters.const_get(camelize(@name))
+        ParsableHash::Converters.const_get(camelize(@name))
       rescue
-        ParseableHash::Converters::Null
+        ParsableHash::Converters::Null
       end
 
       def camelize(name)

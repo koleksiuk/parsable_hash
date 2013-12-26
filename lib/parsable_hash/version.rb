@@ -1,3 +1,3 @@
-module ParseableHash
+module ParsableHash
   VERSION = "0.0.1"
 end

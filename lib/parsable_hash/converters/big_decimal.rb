@@ -1,6 +1,6 @@
 require 'bigdecimal'
 
-module ParseableHash
+module ParsableHash
   module Converters
     class BigDecimal < Base
       private

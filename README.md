@@ -1,7 +1,7 @@
-[![Code Climate](https://codeclimate.com/github/koleksiuk/parseable_hash.png)](https://codeclimate.com/github/koleksiuk/parseable_hash)
-[![Build Status](https://secure.travis-ci.org/koleksiuk/parseable_hash.png)](http://travis-ci.org/koleksiuk/parseable_hash)
+[![Code Climate](https://codeclimate.com/github/koleksiuk/parsable_hash.png)](https://codeclimate.com/github/koleksiuk/parsable_hash)
+[![Build Status](https://secure.travis-ci.org/koleksiuk/parsable_hash.png)](http://travis-ci.org/koleksiuk/parsable_hash)
 
-# ParseableHash
+# ParsableHash
 
 TODO: Write a gem description
 
@@ -9,7 +9,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    gem 'parseable_hash'
+    gem 'parsable_hash'
 
 And then execute:
 
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install parseable_hash
+    $ gem install parsable_hash
 
 ## Usage
 

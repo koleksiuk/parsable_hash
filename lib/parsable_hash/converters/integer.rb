@@ -1,4 +1,4 @@
-module ParseableHash
+module ParsableHash
   module Converters
     class Integer < Base
       private

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParseableHash::Strategies do
+describe ParsableHash::Strategies do
   let(:strategies)    { described_class.new }
   let(:foo_strategy)  { { :bar => :integer } }
 
@@ -54,13 +54,13 @@ describe ParseableHash::Strategies do
     end
 
     context 'when set fallbacks to false' do
-      before { ParseableHash::Strategies.fallbacks = false }
-      after  { ParseableHash::Strategies.fallbacks = true }
+      before { ParsableHash::Strategies.fallbacks = false }
+      after  { ParsableHash::Strategies.fallbacks = true }
 
       it 'should raise an error' do
         expect { 
           strategies[:foobar]
-        }.to raise_error(ParseableHash::MissingStrategy, "Strategy foobar is missing!")
+        }.to raise_error(ParsableHash::MissingStrategy, "Strategy foobar is missing!")
       end
     end
   end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParseableHash::HashStrategy do
+describe ParsableHash::HashStrategy do
 
   let(:integer_klass) { double('integer_klass') }
   let(:float_klass)   { double('float_klass')   }
@@ -8,8 +8,8 @@ describe ParseableHash::HashStrategy do
 
   context 'when all values are symbols' do
     before do
-      ParseableHash::Strategy::ConverterLoader.stub(:from_name).with(:integer) { integer_klass }
-      ParseableHash::Strategy::ConverterLoader.stub(:from_name).with(:float)   { float_klass }
+      ParsableHash::Strategy::ConverterLoader.stub(:from_name).with(:integer) { integer_klass }
+      ParsableHash::Strategy::ConverterLoader.stub(:from_name).with(:float)   { float_klass }
     end
 
     subject { described_class.new(:one => :integer, :two => :float) }
@@ -24,8 +24,8 @@ describe ParseableHash::HashStrategy do
 
   context 'when there are direct class passed' do
     before do
-      ParseableHash::Strategy::ConverterLoader.stub(:from_name).with(:integer) { integer_klass }
-      ParseableHash::Strategy::ConverterLoader.stub(:from_class).with(Object)  { object_klass  }
+      ParsableHash::Strategy::ConverterLoader.stub(:from_name).with(:integer) { integer_klass }
+      ParsableHash::Strategy::ConverterLoader.stub(:from_class).with(Object)  { object_klass  }
     end
 
     subject { described_class.new(:one => :integer, :two => Object) }

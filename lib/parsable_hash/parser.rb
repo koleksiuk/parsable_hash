@@ -1,4 +1,4 @@
-module ParseableHash
+module ParsableHash
   class Parser
     def initialize(hash, strategy)
       @hash     = hash

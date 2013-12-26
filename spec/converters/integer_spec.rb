@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParseableHash::Converters::Integer do
+describe ParsableHash::Converters::Integer do
   describe '#call' do
     context 'when value can be parsed' do
       subject { described_class.new('5') }

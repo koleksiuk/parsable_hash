@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParseableHash::Converters::BigDecimal do
+describe ParsableHash::Converters::BigDecimal do
   describe '#call' do
     context 'when value can be parsed' do
       subject { described_class.new('5.3') }

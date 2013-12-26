@@ -1,4 +1,4 @@
-module ParseableHash
+module ParsableHash
   class HashStrategy
     def initialize(strategy)
       @strategy = prepare(strategy)

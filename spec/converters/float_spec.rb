@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParseableHash::Converters::Float do
+describe ParsableHash::Converters::Float do
   describe '#call' do
     context 'when value can be parsed' do
       subject { described_class.new('5.3') }

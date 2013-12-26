@@ -1,4 +1,4 @@
-module ParseableHash
+module ParsableHash
   module Converters
     class Base
       def initialize(value)
@@ -24,4 +24,4 @@ module ParseableHash
   end
 end
 
-Gem.find_files("parseable_hash/converters/*.rb").delete_if {|f| f =~ /base/ }.each {|f| require f }
+Gem.find_files("parsable_hash/converters/*.rb").delete_if {|f| f =~ /base/ }.each {|f| require f }

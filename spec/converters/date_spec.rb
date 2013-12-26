@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParseableHash::Converters::Date do
+describe ParsableHash::Converters::Date do
   describe '#call' do
     context 'when value can be parsed' do
       let(:date_str) { '12.12.2012' }

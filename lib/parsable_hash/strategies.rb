@@ -1,4 +1,4 @@
-module ParseableHash
+module ParsableHash
   MissingStrategy = Class.new(StandardError)
 
   class Strategies

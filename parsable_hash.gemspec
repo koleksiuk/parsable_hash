@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'parseable_hash/version'
+require 'parsable_hash/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "parseable_hash"
-  spec.version       = ParseableHash::VERSION
+  spec.name          = "parsable_hash"
+  spec.version       = ParsableHash::VERSION
   spec.authors       = ["Konrad Oleksiuk"]
   spec.email         = ["konole@gmail.com"]
   spec.description   = %q{TODO: Write a gem description}
