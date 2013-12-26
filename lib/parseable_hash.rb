@@ -1,4 +1,7 @@
-require "parseable_hash/version"
+require 'pry'
+require 'parseable_hash/version'
+require 'parseable_hash/converters'
+require 'parseable_hash/parser'
 
 module ParseableHash
   def self.included(klass)
@@ -13,8 +16,8 @@ module ParseableHash
 
     private
 
-    def parse_with_strategy(hash, strategry = :default)
-      hash
+    def parse_with_strategy(hash, strategy = :default)
+      Parser.new(hash, strategy).call
     end
   end
 

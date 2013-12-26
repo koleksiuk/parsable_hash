@@ -23,7 +23,7 @@ describe Dummy do
 
     let(:parsed_hash) { obj.call }
 
-    it 'should parse hash to values passed with given strategry' do
+    it 'should parse hash to values passed with given strategy' do
       expect(parsed_hash).to eq(int: 3, fl: 3.5, nested: { dt: obj_date })
     end
   end
