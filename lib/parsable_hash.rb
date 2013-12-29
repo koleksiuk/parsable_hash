@@ -1,10 +1,10 @@
 require 'pry'
 require 'parsable_hash/version'
-require 'parsable_hash/parser'
 require 'parsable_hash/strategies'
 require 'parsable_hash/converters/base'
 require 'parsable_hash/strategy/converter_loader'
 require 'parsable_hash/hash_strategy'
+require 'parsable_hash/parser'
 
 module ParsableHash
   def self.included(klass)
@@ -21,6 +21,10 @@ module ParsableHash
 
     def parse_with_strategy(hash, strategy)
       Parser.new(hash, parse_strategies[strategy]).call
+    end
+
+    def parse_strategies
+      self.class.parse_strategies
     end
   end
 

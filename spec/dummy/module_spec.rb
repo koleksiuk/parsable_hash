@@ -21,11 +21,28 @@ describe Dummy do
     let(:obj_date) { Date.parse(str_date) }
     let(:obj) { Dummy.new(:int => '3', :fl => '3.5', :nested => { :dt => str_date }) }
 
-    let(:parsed_hash) { obj.call }
+    let(:parsed_obj_with_hash) { obj.call }
 
     it 'should parse hash to values passed with given strategy' do
-      pending
-      #expect(parsed_hash).to eq(:int => 3, :fl => 3.5, :nested => { :dt => obj_date })
+      expect(parsed_obj_with_hash).to eq({
+        :int    => 3,
+        :fl     => 3.5,
+        :nested => { :dt => obj_date },
+      })
+    end
+  end
+
+  context 'when hash value is missing' do
+    let(:obj) { Dummy.new(:int => '3', :nested => { :foo => 'test' }, :bar => { :test => 'foobar' }) }
+
+    let(:parsed_obj_with_hash) { obj.call }
+    it 'should not create new key-value pair in hash' do
+      expect(parsed_obj_with_hash).to eq({
+        :int    => 3,
+        :nested => { :foo  => 'test'   },
+        :bar    => { :test => 'foobar' },
+      })
     end
   end
 end
+

@@ -15,7 +15,7 @@ describe ParsableHash::HashStrategy do
     subject { described_class.new(:one => :integer, :two => :float) }
 
     it 'should replace them with callable converters' do
-      expect(subject.strategy).to eq({
+      expect(subject.hash).to eq({
         :one => integer_klass,
         :two => float_klass,
       })
@@ -31,10 +31,20 @@ describe ParsableHash::HashStrategy do
     subject { described_class.new(:one => :integer, :two => Object) }
 
     it 'should leave them as they are' do
-      expect(subject.strategy).to eq({
+      expect(subject.hash).to eq({
         :one => integer_klass,
         :two => object_klass,
       })
+    end
+  end
+
+  describe 'cleaning up strategy hash' do
+    it 'should be possible with passing value hash into initializer' do
+      pending
+    end
+
+    it 'should be possible by invoking directly #clean_for_hash!' do
+      pending
     end
   end
 end
