@@ -43,13 +43,13 @@ Or install it yourself as:
     tx.transaction #=> { :date=>#<Date: 2013-12-12 ((2456639j,0s,0n),+0s,2299161j)>, :amount=>23.22, :id=>124564 } 
 
 ## Available parsers
-:big_decimal => BigDecimal
-:boolean     => Boolean
-:date        => Date
-:float       => Float
-:integer     => Integer
-:date_time   => DateTime
-:null        => default parser (if parser is missing it simply leaves value as it is)
+    :big_decimal => BigDecimal
+    :boolean     => Boolean
+    :date        => Date
+    :float       => Float
+    :integer     => Integer
+    :date_time   => DateTime
+    :null        => default parser (if parser is missing it simply leaves value as it is)
 
 ### Parsing with modules and other features
 
