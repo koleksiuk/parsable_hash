@@ -33,7 +33,7 @@ module ParsableHash
       def load_from_name
         klass = camelize(@name)
 
-        if ParsableHash::Converters.constants.include?(klass)
+        if ParsableHash::Converters.constants.include?(klass.to_sym)
           ParsableHash::Converters.const_get(klass)
         else
           ParsableHash::Converters::Null

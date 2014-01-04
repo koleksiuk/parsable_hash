@@ -23,14 +23,14 @@ module ParsableHash
     private
 
     def prepare(hash)
-      hash.inject({}) do |hash, (k, v)|
-        hash[k] = if v.is_a? Hash
+      hash.inject({}) do |h, (k, v)|
+        h[k] = if v.is_a? Hash
                     prepare(v)
                   else
                     Strategy::ConverterLoader.from_value(v)
                   end
 
-        hash
+        h
       end
     end
 
