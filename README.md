@@ -3,8 +3,8 @@
 
 # ParsableHash
 
-TODO: Write a gem description
-
+Allows to parse hash values in easy way, by extending class with hash
+strategies.
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -21,7 +21,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    class FooTx
+      include ParsableHash
+
+      parse_strategy :transaction_strategy, :date => :date, 
+                                            :amount => :big_decimal, 
+                                            :id => :integer
+
+      attr_accessor :transaction
+
+      def initialize(raw_transaction = {})
+        self.transaction = parse_hash(raw_transaction, with: :transaction_strategy) 
+      end
+    end
+
+    # Fetch transaction from e.g. queue
+    transaction = { :date => '12-12-2013', :amount => '23.22', :id => '124564' }
+
+    tx = FooTx.new(transaction)
+
+    tx.transaction #=> { :date=>#<Date: 2013-12-12 ((2456639j,0s,0n),+0s,2299161j)>, :amount=>23.22, :id=>124564 } 
+
+
 
 ## Contributing
 

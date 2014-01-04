@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ParsableHash::VERSION
   spec.authors       = ["Konrad Oleksiuk"]
   spec.email         = ["konole@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Allows to parse hash with e.g. string values to other class instances}
+  spec.summary       = %q{ParsableHash extension for classes}
   spec.homepage      = ""
   spec.license       = "MIT"
 
