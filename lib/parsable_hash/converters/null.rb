@@ -1,6 +1,6 @@
 module ParsableHash
-  module ConverterLoader
-    class Null
+  module Converters
+    class Null < Base
       private
 
       def try_convert

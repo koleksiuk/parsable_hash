@@ -31,9 +31,13 @@ module ParsableHash
       private
 
       def load_from_name
-        ParsableHash::Converters.const_get(camelize(@name))
-      rescue
-        ParsableHash::Converters::Null
+        klass = camelize(@name)
+
+        if ParsableHash::Converters.constants.include?(klass)
+          ParsableHash::Converters.const_get(klass)
+        else
+          ParsableHash::Converters::Null
+        end
       end
 
       def camelize(name)

@@ -13,9 +13,7 @@ module ParsableHash
     end
 
     def each(&block)
-      hash.each do |strategy|
-        yield strategy
-      end
+      hash.each { |strategy| yield strategy }
     end
 
     def clean_for_hash!(value_hash)
@@ -26,11 +24,11 @@ module ParsableHash
 
     def prepare(hash)
       hash.inject({}) do |hash, (k, v)|
-        if v.is_a? Hash
-          hash[k] = prepare(v)
-        else
-          hash[k] = Strategy::ConverterLoader.from_value(v)
-        end
+        hash[k] = if v.is_a? Hash
+                    prepare(v)
+                  else
+                    Strategy::ConverterLoader.from_value(v)
+                  end
 
         hash
       end
