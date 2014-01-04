@@ -4,8 +4,8 @@ describe ParsableHash::Strategy::ConverterLoader do
   let(:klass) { double('my_converter') }
 
   before do
-    ParsableHash::Converters.stub_chain(:constants, :include?) { true }
-    ParsableHash::Converters.stub(:const_get).with('MyConverter') { klass }
+    ParsableHash::Converters.stub(:const_defined?).with('MyConverter') { true }
+    ParsableHash::Converters.stub(:const_get).with('MyConverter')      { klass }
   end
 
   describe 'coverter loading' do
