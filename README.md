@@ -95,8 +95,7 @@ Or install it yourself as:
 And then use ```:my_class``` as parse strategy for key
 
 ## Configuration
-    ParsableHash::Strategy.fallbacks = true # set to false if you want to
-    raise ParsableHash::MissingStrategy if strategy doesn't exist. 
+    ParsableHash::Strategy.fallbacks = true # set to false if you want to raise ParsableHash::MissingStrategy if strategy doesn't exist. 
     # In other case it is empty strategy (you can override it by adding :default to your strategies)
 
 ## To-do
