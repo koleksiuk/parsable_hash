@@ -9,4 +9,8 @@ rvm:
   - rbx-2.1.1
   - ree
 
+before_install:
+  - gem update --system 2.1.11
+  - gem --version
+
 script: bundle exec rspec spec
