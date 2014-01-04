@@ -42,6 +42,68 @@ Or install it yourself as:
 
     tx.transaction #=> { :date=>#<Date: 2013-12-12 ((2456639j,0s,0n),+0s,2299161j)>, :amount=>23.22, :id=>124564 } 
 
+## Available parsers
+:big_decimal => BigDecimal
+:boolean     => Boolean
+:date        => Date
+:float       => Float
+:integer     => Integer
+:date_time   => DateTime
+:null        => default parser (if parser is missing it simply leaves value as it is)
+
+### Parsing with modules and other features
+
+    # Using strategies from other modules / classes
+    module ParseStrategies
+      include ParsableHash
+
+      parse_strategy :transaction_strategy, :date => :date, 
+                                            :amount => :big_decimal, 
+                                            :id => :integer
+    end
+
+    class FooTx
+      include ParsableHash
+
+
+      attr_accessor :transaction
+
+      def initialize(raw_transaction = {})
+        self.transaction = parse_hash(
+                                       raw_transaction,
+                                       :with  => :transaction_strategy,
+                                       :const => ParseStrategies # must be kind of module/class
+                                     )
+      end
+    end
+
+
+## Extending with own parsers
+
+    module ParsableHash
+      module Converters
+        class MyClass < Base
+          private
+
+          def try_convert
+            ::MyClass.parse_string(@value)
+          end
+        end
+      end
+    end
+
+And then use ```:my_class``` as parse strategy for key
+
+## Configuration
+    ParsableHash::Strategy.fallbacks = true # set to false if you want to
+    raise ParsableHash::MissingStrategy if strategy doesn't exist. 
+    # In other case it is empty strategy (you can override it by adding :default to your strategies)
+
+## To-do
+* Add support for adding default values
+* Add support for configurable fallback to string if key as symbol is missing (&
+  vice-versa)
+
 
 
 ## Contributing
