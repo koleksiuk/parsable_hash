@@ -1,3 +1,5 @@
+require 'date'
+
 module ParsableHash
   module Converters
     class Base

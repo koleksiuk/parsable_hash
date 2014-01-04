@@ -1,10 +1,10 @@
 module ParsableHash
   module Converters
-    class Date < Base
+    class DateTime < Base
       private
 
       def try_convert
-        ::Date.parse(@value)
+        ::DateTime.parse(@value)
       end
     end
   end
