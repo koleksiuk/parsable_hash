@@ -74,11 +74,21 @@ Or install it yourself as:
                                        :with  => :transaction_strategy,
                                        :const => ParseStrategies # must be kind of module/class
                                      )
+
+        # You can also parse hash with Hash#parse_with
+        # self.transaction = raw_transaction.parse_with(self, :transaction_strategy)
+        # NOTE: self can be also replaced with any class that includes ParsableHash
       end
     end
 
 
 ## Extending with own parsers
+
+    class MyClass
+      def self.parse_string(val)
+        "foo#{val}"
+      end
+    end
 
     module ParsableHash
       module Converters
@@ -102,6 +112,8 @@ And then use ```:my_class``` as parse strategy for key
 * Add support for adding default values
 * Add support for configurable fallback to string if key as symbol is missing (&
   vice-versa)
+* Add support for extending parsers within other modules and nested
+  classes (as it may happen that we have 2 same classes)
 
 
 
