@@ -1,5 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/koleksiuk/parsable_hash.png)](https://codeclimate.com/github/koleksiuk/parsable_hash)
 [![Build Status](https://secure.travis-ci.org/koleksiuk/parsable_hash.png)](http://travis-ci.org/koleksiuk/parsable_hash)
+[![Coverage Status](https://coveralls.io/repos/koleksiuk/parsable_hash/badge.png)](https://coveralls.io/r/koleksiuk/parsable_hash)
 
 # ParsableHash
 

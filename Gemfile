@@ -5,3 +5,4 @@ gemspec
 
 gem 'pry', :require => 'pry'
 gem 'pry-nav', :require => 'pry-nav'
+gem 'coveralls', :require => false
