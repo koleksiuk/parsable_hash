@@ -1,3 +1,0 @@
-Copyright	LICENSE.txt	/^Copyright (c) 2013 Konrad Oleksiuk$/
-parsable_hash	Gemfile.lock	/^    parsable_hash (0.0.1)$/
-unshift	parsable_hash.gemspec	/^$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?/
